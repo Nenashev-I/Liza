@@ -8,6 +8,30 @@ class Page(tk.Frame):
     def show(self):
         self.lift()
 
+class Page0(Page):
+    def __init__(self, *args, **kwargs):
+        Page.__init__(self, *args, **kwargs)
+        label = tk.Label(self, text="Жизнь студента")
+        label.pack(side="top", fill="both", expand=True)
+        def nClickk():
+            global counter
+            counter += 2
+            print(counter)
+            btn00.config(state='disabled')
+            label.destroy()
+            p1 = Page1(self)
+            buttonframe = tk.Frame(self)
+            container = tk.Frame(self)
+            buttonframe.pack(side="top", fill="x", expand=False)
+            container.pack(side="top", fill="both", expand=True)
+            p1.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
+            b1 = tk.Button(buttonframe, text="1 Вопрос", command=p1.lift)
+            b1.pack()
+
+        btn00 = tk.Button(label, text="Начать", command=nClickk)
+        btn00.pack()
+        btn00.place(relx=0.5, rely=0.6, anchor="center")
+
 
 class Page1(Page):
     def __init__(self, *args, **kwargs):
@@ -32,7 +56,7 @@ class Page1(Page):
 
         btn0 = tk.Button(label, text="студент-ботаник", command=nClick)
         btn0.pack()
-        btn0.place(relx=0.2, rely=0.6,)
+        btn0.place(relx=0.2, rely=0.6, anchor="center")
 
         def OnClick():
             print(counter)
@@ -49,7 +73,7 @@ class Page1(Page):
 
         btn1 = tk.Button(label, text="двоечник", command=OnClick)
         btn1.pack()
-        btn1.place(relx=0.4, rely=0.6, )
+        btn1.place(relx=0.4, rely=0.6, anchor="center")
 
 
         def OnClick1():
@@ -66,7 +90,7 @@ class Page1(Page):
             b2.pack()
         btn2 = tk.Button(label, text="везунчик",command=OnClick1)
         btn2.pack()
-        btn2.place(relx=0.6, rely=0.6, )
+        btn2.place(relx=0.6, rely=0.6, anchor="center" )
 
 
         def OnClick2():
@@ -83,7 +107,7 @@ class Page1(Page):
             b2.pack()
         btn3 = tk.Button(label, text="халявщик",command=OnClick2)
         btn3.pack()
-        btn3.place(relx=0.8, rely=0.6, )
+        btn3.place(relx=0.8, rely=0.6, anchor="center" )
 
 
 
@@ -113,7 +137,7 @@ class Page2(Page):
 
         btn4 = tk.Button(label, text="На квартире", command=nClick3)
         btn4.pack()
-        btn4.place(relx=0.2, rely=0.6,)
+        btn4.place(relx=0.2, rely=0.6, anchor="center")
 
         def OnClick4():
             global counter
@@ -131,7 +155,7 @@ class Page2(Page):
             b3.pack()
         btn5 = tk.Button(label, text="У родителей", command=OnClick4)
         btn5.pack()
-        btn5.place(relx=0.4, rely=0.6, )
+        btn5.place(relx=0.4, rely=0.6, anchor="center" )
 
         def OnClick5():
             global counter
@@ -149,7 +173,7 @@ class Page2(Page):
             b3.pack()
         btn6 = tk.Button(label, text="В общежитие",command=OnClick5)
         btn6.pack()
-        btn6.place(relx=0.6, rely=0.6, )
+        btn6.place(relx=0.6, rely=0.6, anchor="center" )
 
 class Page3(Page):
     def __init__(self, *args, **kwargs):
@@ -173,7 +197,7 @@ class Page3(Page):
 
         btn8 = tk.Button(label, text="Усиленно готовился", command=nClick6, anchor='center')
         btn8.pack()
-        btn8.place(relx=0.2, rely=0.6,)
+        btn8.place(relx=0.2, rely=0.6, anchor="center")
 
         def OnClick7():
             print(counter)
@@ -189,7 +213,7 @@ class Page3(Page):
             b4.pack()
         btn9 = tk.Button(label, text="Отдыхал и не парился", command=OnClick7, anchor='center')
         btn9.pack()
-        btn9.place(relx=0.4, rely=0.6, )
+        btn9.place(relx=0.4, rely=0.6, anchor="center" )
 
         def OnClick8():
             global counter
@@ -207,7 +231,7 @@ class Page3(Page):
             b4.pack()
         btn10 = tk.Button(label, text="Прочитал пару билетов",command=OnClick8, anchor='center')
         btn10.pack()
-        btn10.place(relx=0.6, rely=0.6, )
+        btn10.place(relx=0.6, rely=0.6, anchor="center")
 
         def OnClick9():
             print(counter)
@@ -223,7 +247,7 @@ class Page3(Page):
             b4.pack()
         btn11 = tk.Button(label, text="Тусовался все выходные",command=OnClick9, anchor='center')
         btn11.pack()
-        btn11.place(relx=0.8, rely=0.6, )
+        btn11.place(relx=0.8, rely=0.6, anchor="center")
 
 class Page4(Page):
     def __init__(self, *args, **kwargs):
@@ -247,7 +271,7 @@ class Page4(Page):
 
         btn12 = tk.Button(label, text="Да", command=nClick10)
         btn12.pack()
-        btn12.place(relx=0.2, rely=0.6,)
+        btn12.place(relx=0.2, rely=0.6, anchor="center")
 
         def OnClick11():
             print(counter)
@@ -263,7 +287,7 @@ class Page4(Page):
             b5.pack()
         btn13 = tk.Button(label, text="нет", command=OnClick11)
         btn13.pack()
-        btn13.place(relx=0.4, rely=0.6, )
+        btn13.place(relx=0.4, rely=0.6, anchor="center" )
 
 class Page5(Page):
     def __init__(self, *args, **kwargs):
@@ -288,7 +312,7 @@ class Page5(Page):
 
         btn14 = tk.Button(label, text="В 23:00", command=nClick12)
         btn14.pack()
-        btn14.place(relx=0.2, rely=0.6,)
+        btn14.place(relx=0.2, rely=0.6, anchor="center")
 
         def OnClick13():
             global counter
@@ -306,7 +330,7 @@ class Page5(Page):
             b6.pack()
         btn15 = tk.Button(label, text="В 1 ночи", command=OnClick13)
         btn15.pack()
-        btn15.place(relx=0.4, rely=0.6, )
+        btn15.place(relx=0.4, rely=0.6, anchor="center" )
 
         def OnClick14():
             print(counter)
@@ -322,7 +346,7 @@ class Page5(Page):
             b6.pack()
         btn16 = tk.Button(label, text="В 3 утра",command=OnClick14)
         btn16.pack()
-        btn16.place(relx=0.6, rely=0.6, )
+        btn16.place(relx=0.6, rely=0.6, anchor="center" )
 
         def OnClick15():
             print(counter)
@@ -338,7 +362,7 @@ class Page5(Page):
             b6.pack()
         btn17 = tk.Button(label, text="Сон не для меня",command=OnClick15)
         btn17.pack()
-        btn17.place(relx=0.8, rely=0.6, )
+        btn17.place(relx=0.8, rely=0.6, anchor="center" )
 
 class Page6(Page):
     def __init__(self, *args, **kwargs):
@@ -363,7 +387,7 @@ class Page6(Page):
 
         btn18 = tk.Button(label, text="Выключу и буду собираться", command=nClick16)
         btn18.pack()
-        btn18.place(relx=0.2, rely=0.6,)
+        btn18.place(relx=0.2, rely=0.6, anchor="center")
 
         def OnClick17():
             global counter
@@ -381,7 +405,7 @@ class Page6(Page):
             b7.pack()
         btn19 = tk.Button(label, text="Отложу на 10 минут", command=OnClick17)
         btn19.pack()
-        btn19.place(relx=0.4, rely=0.6, )
+        btn19.place(relx=0.4, rely=0.6, anchor="center" )
 
         def OnClick18():
             print(counter)
@@ -397,7 +421,7 @@ class Page6(Page):
             b7.pack()
         btn20 = tk.Button(label, text='Выключу и полежу ещё "минутку"',command=OnClick18)
         btn20.pack()
-        btn20.place(relx=0.6, rely=0.6, )
+        btn20.place(relx=0.6, rely=0.6, anchor="center" )
 
 
 class Page7(Page):
@@ -423,7 +447,7 @@ class Page7(Page):
 
         btn21 = tk.Button(label, text="Да, конечно", command=nClick19)
         btn21.pack()
-        btn21.place(relx=0.2, rely=0.6,)
+        btn21.place(relx=0.2, rely=0.6, anchor="center")
 
         def OnClick20():
             global counter
@@ -441,7 +465,7 @@ class Page7(Page):
             b8.pack()
         btn22 = tk.Button(label, text="Повторю основные формулы", command=OnClick20)
         btn22.pack()
-        btn22.place(relx=0.4, rely=0.6, )
+        btn22.place(relx=0.4, rely=0.6, anchor="center" )
 
         def OnClick21():
             print(counter)
@@ -457,7 +481,7 @@ class Page7(Page):
             b8.pack()
         btn23 = tk.Button(label, text="Нет",command=OnClick21)
         btn23.pack()
-        btn23.place(relx=0.6, rely=0.6, )
+        btn23.place(relx=0.6, rely=0.6, anchor="center" )
 
 class Page8(Page):
     def __init__(self, *args, **kwargs):
@@ -470,7 +494,7 @@ class Page8(Page):
 
         btn25 = tk.Button(label, text="Да", command=nClick22)
         btn25.pack()
-        btn25.place(relx=0.2, rely=0.6,)
+        btn25.place(relx=0.2, rely=0.6, anchor="center")
 
         def OnClick23():
             global counter
@@ -479,7 +503,7 @@ class Page8(Page):
             btn26.config(state='disabled')
         btn26 = tk.Button(label, text="Нет", command=OnClick23)
         btn26.pack()
-        btn26.place(relx=0.4, rely=0.6, )
+        btn26.place(relx=0.4, rely=0.6, anchor="center" )
 
         def OnClick24():
             Canvas = tk.Canvas()
@@ -534,11 +558,12 @@ class Page8(Page):
             btn27.config(state='disabled')
         btn27 = tk.Button(label, text="Итог", command=OnClick24)
         btn27.pack()
-        btn27.place(relx=0.8, rely=0.8, )
+        btn27.place(relx=0.8, rely=0.8, anchor="center" )
 
 class MainView(tk.Frame):
     def __init__(self, *args, **kwargs):
         tk.Frame.__init__(self, *args, **kwargs)
+        p0 = Page0(self)
         p1 = Page1(self)
         p2 = Page2(self)
         p3 = Page3(self)
@@ -553,6 +578,7 @@ class MainView(tk.Frame):
         buttonframe.pack(side="top", fill="x", expand=False)
         container.pack(side="top", fill="both", expand=True)
 
+        p0.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
         p1.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
         p2.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
         p3.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
@@ -572,7 +598,7 @@ class MainView(tk.Frame):
         b8 = tk.Button(buttonframe, text="8 вопрос", command=p8.lift)
 
 
-        p1.show()
+        p0.show()
 
 
 
